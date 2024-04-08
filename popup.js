@@ -1,6 +1,6 @@
-const apiKey = '2e357f0a-8cf0-451b-9f7f-6c3982e24756'; // Reemplaza con tu propia clave API
+const apiKey = 'Your_api_key_opsgenie'; // Reemplaza con tu propia clave API
 const baseUrl = 'https://api.opsgenie.com';
-const tagIncidente = 'NOC-Incidents-Test';
+const tagIncidente = 'Your_filter_tagsIncident_opsgenie';
 
 let entradasAnteriores = []; // Array para mantener un registro de las entradas anteriores
 
