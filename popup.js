@@ -2,7 +2,7 @@ const apiKey = 'Your_api_key_opsgenie'; // Reemplaza con tu propia clave API
 const baseUrl = 'https://api.opsgenie.com';
 const tagIncidente = 'Your_filter_tagsIncident_opsgenie';
 
-let entradasAnteriores = []; // Array para mantener un registro de las entradas anteriores
+let entradasAnteriores = []; 
 
 async function obtenerIncidentesAbiertosConTag(tag) {
     try {
@@ -44,7 +44,7 @@ async function obtenerYMostrarIncidentesAbiertosConTag(tag) {
 
         if (incidentes.length === 0) {
             const noResultsP = document.createElement('p');
-            noResultsP.textContent = '0 ECAS Abiertos! '; // Mensaje para cuando no hay resultados
+            noResultsP.textContent = '0 ECAS Abiertos! '; 
             resultadosDiv.appendChild(noResultsP);
         } else {
             incidentes.forEach(async incidente => {
@@ -65,7 +65,7 @@ async function obtenerYMostrarIncidentesAbiertosConTag(tag) {
                                 const eventoLi = document.createElement('li');
                                 eventoLi.textContent = `Se contacto a: ${entry.actor.name}, Status alerta: ${entry.title.content}`;
                                 eventosUl.appendChild(eventoLi);
-                                entradasAnteriores.push(entry.id); // Agregar la entrada al registro
+                                entradasAnteriores.push(entry.id); 
                             }
                         }
                     });
@@ -75,7 +75,7 @@ async function obtenerYMostrarIncidentesAbiertosConTag(tag) {
             });
         }
     } catch (error) {
-        console.error(`Error al obtener y mostrar los incidentes abiertos con la etiqueta "${tagIncidente}":`, error);
+        console.error(`Error al obtener resultados`, error);
     }
 }
 
