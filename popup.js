@@ -1,12 +1,12 @@
-const apiKey = 'Your_api_key_opsgenie'; // Reemplaza con tu propia clave API
+const apiKey = 'Your_api_key_opsgenie'; 
 const baseUrl = 'https://api.opsgenie.com';
-const tagIncidente = 'Your_filter_tagsIncident_opsgenie';
+//const tagIncidente = 'Your_filter_tagsIncident_opsgenie';
 
 let entradasAnteriores = []; 
 
 async function obtenerIncidentesAbiertosConTag(tag) {
     try {
-        const query = encodeURIComponent(`status: open AND tag: "NOC-Incidents"`);
+        const query = encodeURIComponent(`status: open AND tag:XXXXXXX`);
         const response = await fetch(`${baseUrl}/v1/incidents?query=${query}`, {
             headers: {
                 Authorization: `GenieKey ${apiKey}`
@@ -79,6 +79,6 @@ async function obtenerYMostrarIncidentesAbiertosConTag(tag) {
     }
 }
 
-window.onload = function() {
-    obtenerYMostrarIncidentesAbiertosConTag(tagIncidente);
+//window.onload = function() {
+   // obtenerYMostrarIncidentesAbiertosConTag(tagIncidente);
 };
